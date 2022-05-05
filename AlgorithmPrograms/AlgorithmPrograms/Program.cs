@@ -10,6 +10,8 @@ class program
         bool check=true;
         const string path = @"D:\PracticeProblem\AlgorithmPrograms\AlgorithmPrograms\AlgorithmPrograms\Utility\BinarySearchFile.txt";
         BinarySearch binary = new BinarySearch();
+        const string path1 = @"D:\PracticeProblem\AlgorithmPrograms\AlgorithmPrograms\AlgorithmPrograms\Utility\IntegerFile.txt";
+        InsertionSort sort = new InsertionSort();
         Console.WriteLine("1.Binary Search");
         while(check)
         {
@@ -18,10 +20,15 @@ class program
             switch(opt)
             {
                 case 1:
-                    string[] input_Array=File.ReadAllLines(path);
+                    string[] input_Array=File.ReadAllLines(path1);
                     Console.WriteLine("Enter a word to search");
                     string word=Console.ReadLine();
                     binary.Search(input_Array,word);
+                    break;
+                case 2:
+                    string[] array = File.ReadAllLines(path1);
+                    sort.Sort(array);
+                    sort.Display(array);
                     break;
             }
         }
